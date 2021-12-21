@@ -21,4 +21,8 @@ G.add_edge("2","6")
 G.add_edge("4","6")
 
 nx.draw(G, with_labels = True)
-plt.savefig("networkx6.png")
+#plt.savefig("networkx6.png")
+
+# Ejecutar contra la QPU
+sampler = EmbeddingComposite(DWaveSampler())
+print(dnx.min_vertex_cover(G, sampler))
